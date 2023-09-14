@@ -1,0 +1,24 @@
+{
+  "name": "command-telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.5.1",
+    "node-cron": "^3.0.0",
+    "node-telegram-bot-api": "^0.58.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
