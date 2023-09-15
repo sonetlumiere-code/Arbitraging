@@ -15,6 +15,8 @@ const cronJS = {
         cron.schedule('0 */1 * * * *', async () => {
             try {
                 const settings = await settingsController.getSettings()
+                console.log(settings);
+                
                 if (settings.run) {
                     console.log('Loading . . .')                   
                     try {

@@ -46,3 +46,5 @@ CHAT_ID_GROUP=-xxxxx
 MONGODB_URI="mongodb://localhost:27017/arbitraje-bot-cli"
 SETTINGS_ID="xxxxx"
 ```
+
+*Update SETTINGS_ID with the generated Settings MongoDB Document id*

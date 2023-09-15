@@ -3,6 +3,10 @@
 const Setting = require('../models/settings.model')
 const settingsId = process.env.SETTINGS_ID
 
+if (!settingsId) {
+    console.error('No settings ID provided.')
+}
+
 const settingsController = {
 
     getSettings: async () => {

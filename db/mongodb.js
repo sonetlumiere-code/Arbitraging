@@ -5,18 +5,21 @@ const initialSetup = require('../models/initial_setup')
 require('../models/settings.model')
 
 const mongoDB_settings = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 90000
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // serverSelectionTimeoutMS: 90000
 }
 
-mongoose.set('strictQuery', true)
+// mongoose.set('strictQuery', true)
 
-mongoose.connect(process.env.MONGODB_URI, mongoDB_settings, (err) => {
-    if (!err) {
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGODB_URI, mongoDB_settings)
         initialSetup.createSettings()
         console.log('MongoDB connection succeeded.')
-    } else {
+    } catch (error) {
         console.log('Error in MongoDB connection : ' + err)
     }
-})
+}
+
+connectDB()
