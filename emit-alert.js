@@ -35,10 +35,7 @@ const emitAlert = async (
     const settings = await settingsController.getSettings()
 
     if (gain > settings.gain) {
-        const message = `
-            Arbitrage alert:\n
-            Sell High: ${sellHigh}\n
-            Gain: +${gain}%`
+        const message = `Arbitrage alert:\nBuy Low: ${buyLow}\nSell High: ${sellHigh}\nGain: +${gain}%`
         bot.sendMessage(chatId, message)
     }
 }
