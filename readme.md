@@ -43,7 +43,7 @@ NTBA_FIX_319=1
 TELEGRAM_BOT_TOKEN="00000:xxxxx"
 CHAT_ID="xxxxx"
 CHAT_ID_GROUP=-xxxxx
-MONGODB_URI="mongodb://localhost:27017/arbitraje-bot-cli"
+MONGODB_URI="mongodb://localhost:27017/arbitrage-bot-cli"
 SETTINGS_ID="xxxxx"
 ```
 

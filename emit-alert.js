@@ -21,7 +21,7 @@ const emitAlert = async (favoriteBuyMethod, lowPrices, highPrices, gain) => {
     const settings = await settingsController.getSettings()
 
     if (gain > settings.gain) {
-        const message = `Arbitraje alert:\nBuy Fav: ${buyFav}\nSell High: ${sellHigh}\nGain: +${gain}%`
+        const message = `Arbitrage alert:\nBuy Fav: ${buyFav}\nSell High: ${sellHigh}\nGain: +${gain}%`
         bot.sendMessage(chatId, message)
     }
 

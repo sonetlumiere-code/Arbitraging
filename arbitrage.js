@@ -1,9 +1,9 @@
 const { exchanges } = require('./data.js')
 const emitAlert = require('./emit-alert.js')
 
-const findArbitraje = (stables_fiat) => {
+const findArbitrage = (stables_fiat) => {
 
-    const arbitraje = {
+    const arbitrage = {
         BUY: {
             favoriteBuyMethod: getPrices.getFavoriteBuyMethod(stables_fiat),
             lowPrices: getPrices.getLowPrices(stables_fiat)
@@ -13,14 +13,14 @@ const findArbitraje = (stables_fiat) => {
         } 
     }
 
-    const buy = Object.values(arbitraje.BUY.favoriteBuyMethod)[0]
-    const sell = Object.values(Object.values(arbitraje.SELL.highPrices)[0])[0]
+    const buy = Object.values(arbitrage.BUY.favoriteBuyMethod)[0]
+    const sell = Object.values(Object.values(arbitrage.SELL.highPrices)[0])[0]
     const gain = (((sell - buy) / sell) * 100).toFixed(2)
 
     emitAlert(
-        arbitraje.BUY.favoriteBuyMethod, 
-        arbitraje.BUY.lowPrices, 
-        arbitraje.SELL.highPrices, 
+        arbitrage.BUY.favoriteBuyMethod, 
+        arbitrage.BUY.lowPrices, 
+        arbitrage.SELL.highPrices, 
         gain
     )
 
@@ -71,4 +71,4 @@ const getPrices = {
 
 }
 
-module.exports = findArbitraje
+module.exports = findArbitrage

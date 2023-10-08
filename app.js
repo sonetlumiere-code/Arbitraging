@@ -7,7 +7,7 @@ const colors = require('colors')
 const { cryptos, fiats } = require('./data.js')
 const settingsController = require('./controllers/settings.controller')
 const getPairs = require('./get-exchanges-data')
-const findArbitraje = require('./arbitraje')
+const findArbitrage = require('./arbitrage')
 
 const cronJS = {
     run: () => {
@@ -24,7 +24,7 @@ const cronJS = {
                             getPairs.getStables(cryptos, fiats),
                             //getPairs.getCryptos(cryptos, fiats)
                         ])          
-                        findArbitraje(stables_fiat)
+                        findArbitrage(stables_fiat)
                         console.log(Date().blue) 
                     } catch (err) {
                         console.log(err)
