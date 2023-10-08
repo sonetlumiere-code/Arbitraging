@@ -7,7 +7,7 @@ const apiCall = async (exchange, crypto, fiat, volume = 1000) => {
         const res = await axios(`https://criptoya.com/api/${exchange}/${crypto}/${fiat}/${volume}`)
         if (res.data == 'Invalid pair') {
             return res.data
-        }
+        }  
         return format(res.data, exchange)
     } catch (error) {
         console.log(error)

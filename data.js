@@ -1,6 +1,7 @@
 const exchanges = {
     belo: 'belo',
-    binance: 'binanceP2P',
+    // binanceP2P: 'binanceP2P',
+    binance: 'binance',
     bitex: 'bitex',
     bitso: 'bitso',
     buenbit: 'buenbit',

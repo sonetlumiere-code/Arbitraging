@@ -18,7 +18,7 @@ const settingsController = {
                 return 'Error al buscar settings'
             }
         } catch (error) {
-            //console.log(error)
+            console.error(error)
         }
     },
 
@@ -31,7 +31,7 @@ const settingsController = {
                 return 'Error updating'
             }
         } catch (error) {
-            //console.log(error)
+            console.error(error)
         }
     }
     

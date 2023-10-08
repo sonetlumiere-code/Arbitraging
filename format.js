@@ -19,12 +19,20 @@ const format = (data, exchange) => {
                 Venta: data.totalBid
             }
             break;
+        // case exchanges.binanceP2P:
+        //     console.log(data);
+            
+        //     result = {
+        //         Compra: +data.asks.data[0].adv.price,
+        //         Venta: +data.bids.data
+        //             .filter(x => x.adv.tradeMethods.some(x => !filtersBinanceP2P.tradeMethods.includes(x.identifier)) && !filtersBinanceP2P.users.includes(x.advertiser.nickName))
+        //             .find(x => x.advertiser.userType === 'merchant')?.adv.price
+        //     }
+        //     break;
         case exchanges.binance:
             result = {
-                Compra: +data.asks.data[0].adv.price,
-                Venta: +data.bids.data
-                    .filter(x => x.adv.tradeMethods.some(x => !filtersBinanceP2P.tradeMethods.includes(x.identifier)) && !filtersBinanceP2P.users.includes(x.advertiser.nickName))
-                    .find(x => x.advertiser.userType === 'merchant')?.adv.price
+                Compra: data.totalAsk,
+                Venta: data.totalBid
             }
             break;
         case exchanges.bitex:
