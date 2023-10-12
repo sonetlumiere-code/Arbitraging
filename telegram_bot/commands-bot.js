@@ -59,7 +59,7 @@ const setGain = async (n) => {
                 return 'Error updating gain'
             }          
         } catch (error) {
-            //console.log(error)
+            console.error(error)
         }      
     } else {
         return 'argument expected, try:\n/ab gain 0.9'
@@ -76,7 +76,7 @@ const setRun = async (valueBoolean) => {
                 return 'Error updating run'
             }
         } catch (error) {
-            //console.log(error)
+            console.error(error)
         }
     } else {
         return 'argument expected, try:\n/ab run true'

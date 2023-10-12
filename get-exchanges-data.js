@@ -10,7 +10,7 @@ const apiCall = async (exchange, crypto, fiat, volume = 1000) => {
         }  
         return format(res.data, exchange)
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 

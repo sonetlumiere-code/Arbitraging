@@ -13,7 +13,7 @@ const initialSetup = {
             ])
             console.log('initial setup: ', settingsValues)
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
 

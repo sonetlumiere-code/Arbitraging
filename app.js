@@ -11,14 +11,14 @@ const findArbitrage = require('./arbitrage')
 
 const cronJS = {
     run: () => {
-        console.log('cron running . . .')
+        // console.log('cron running . . .')
         cron.schedule('0 */1 * * * *', async () => {
             try {
                 const settings = await settingsController.getSettings()
                 // console.log(settings);
                 
                 if (settings?.run) {
-                    console.log('Loading . . .')                   
+                    // console.log('Loading . . .')                   
                     try {
                         const [ stables_fiat, cryptos_fiat ] = await Promise.all([
                             getPairs.getStables(cryptos, fiats),
@@ -27,11 +27,11 @@ const cronJS = {
                         findArbitrage(stables_fiat)
                         console.log(Date().blue) 
                     } catch (err) {
-                        console.log(err)
+                        console.error(err)
                     }               
                 }
             } catch (error) {
-                console.log(error)
+                console.error(error)
             }              
         })
     }
