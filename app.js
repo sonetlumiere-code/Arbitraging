@@ -25,7 +25,7 @@ const cronJS = {
                             //getPairs.getCryptos(cryptos, fiats)
                         ])          
                         findArbitrage(stables_fiat)
-                        console.log(Date().blue) 
+                        // console.log(Date().blue) 
                     } catch (err) {
                         console.error(err)
                     }               
